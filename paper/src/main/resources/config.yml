@@ -1,0 +1,41 @@
+# Must match the 'secret' in plugins/fakeplayers/config.properties on Velocity
+secret: "change-me"
+# Seconds between full re-syncs to the proxy
+sync-interval-seconds: 30
+# Auto-save fake player data (inventory, position...) every N seconds
+autosave-seconds: 60
+suppress-join-quit-messages: false
+auto-respawn: true
+defaults:
+  gamemode: SURVIVAL
+  ping: 0
+  listed: true
+  autospawn: true
+
+# When someone runs one of these commands on a fake player, the fake runs the accept command(s)
+auto-accept-tpa: true
+auto-accept-delay-ticks: 10
+tpa-commands: [tpa, tpahere, tpask, tpaskhere, call]
+accept-commands: [tpaccept]   # {player} = the sender's name
+
+# ---- Auto-click menus for fake players ----
+# When a menu (GUI) opens for a fake player, the plugin clicks the first item that matches a rule.
+# Rules are tried top to bottom. Every field is optional; leave out what you don't care about.
+#   title:    part of the menu title (not case sensitive)
+#   material: exact item material, e.g. LIME_STAINED_GLASS_PANE
+#   name:     part of the item's display name (not case sensitive)
+#   slot:     exact slot number, starting at 0 (top-left)
+auto-click-gui:
+  enabled: true
+  delay-ticks: 3
+  click-type: LEFT        # LEFT, RIGHT, SHIFT_LEFT
+  rules:
+    - material: LIME_STAINED_GLASS_PANE
+    - material: LIME_STAINED_GLASS
+    - material: GREEN_STAINED_GLASS_PANE
+    - material: GREEN_STAINED_GLASS
+    # Examples:
+    # - title: "tpa request"
+    #   name: "accept"
+    # - title: "confirm"
+    #   slot: 15

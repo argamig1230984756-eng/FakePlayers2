@@ -1,0 +1,13 @@
+name: FakePlayers
+version: 1.0.0
+main: dev.fakeplayers.paper.FakePlayersPlugin
+api-version: '1.21'
+description: Real (server-side) fake players, synced to Velocity
+commands:
+  fp:
+    description: Manage fake players
+    aliases: [fakeplayer]
+    permission: fakeplayers.admin
+permissions:
+  fakeplayers.admin:
+    default: op
